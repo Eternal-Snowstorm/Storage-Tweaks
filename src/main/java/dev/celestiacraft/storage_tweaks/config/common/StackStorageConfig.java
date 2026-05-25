@@ -6,6 +6,7 @@ import net.minecraftforge.common.ForgeConfigSpec;
 public class StackStorageConfig extends ConfigModule {
 	public static ForgeConfigSpec.BooleanValue NO_STACK_UPGRADE_ENABLED;
 	public static ForgeConfigSpec.BooleanValue NO_STORAGE_STACK_ENABLED;
+	public static ForgeConfigSpec.BooleanValue ADDITIVE_STACK_UPGRADE_ENABLED;
 
 	public StackStorageConfig(ForgeConfigSpec.Builder builder) {
 		super(builder, "stack_storage", "Stack Storage");
@@ -24,5 +25,11 @@ public class StackStorageConfig extends ConfigModule {
 				.comment("type: boolean")
 				.comment("default: true")
 				.define("no_storage_stack_enabled", true);
+
+		ADDITIVE_STACK_UPGRADE_ENABLED = builder
+				.comment("Whether Sophisticated stack upgrades should stack additively instead of multiplicatively (e.g. 4x 8-tier upgrades give 64 * (8+8+8+8) instead of 64 * 8^4)")
+				.comment("type: boolean")
+				.comment("default: true")
+				.define("additive_stack_upgrade_enabled", true);
 	}
 }

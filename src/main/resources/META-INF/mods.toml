@@ -46,3 +46,5 @@ ordering = "AFTER"
 side = "BOTH"
 [[mixins]]
 config = "storage_tweaks.mixins.json"
+[[mixins]]
+config = "storage_tweaks_sophisticated.mixins.json"
