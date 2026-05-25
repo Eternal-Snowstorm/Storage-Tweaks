@@ -2,9 +2,18 @@
 	"required": true,
 	"minVersion": "0.8",
 	"package": "dev.celestiacraft.storage_tweaks.mixin",
-	"compatibilityLevel": "JAVA_8",
+	"compatibilityLevel": "JAVA_17",
 	"refmap": "storage_tweaks.refmap.json",
 	"mixins": [
+		"StackUpgradeConfigMixin",
+		"BigInventoryHandlerMixin",
+		"CompactingInventoryHandlerMixin",
+		"DrawerStackItemHandlerMixin",
+		"CompactingStackItemHandlerMixin",
+		"InventoryHandlerMixin",
+		"StorageContainerMenuBaseMixin",
+		"ControllableDrawerTileMixin",
+		"StorageUpgradeItemMixin"
 	],
 	"client": [
 	],

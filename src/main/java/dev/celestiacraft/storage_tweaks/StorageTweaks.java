@@ -1,8 +1,9 @@
 package dev.celestiacraft.storage_tweaks;
 
+import dev.celestiacraft.storage_tweaks.config.main.CommonConfig;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -18,6 +19,6 @@ public class StorageTweaks {
 	}
 
 	public StorageTweaks(FMLJavaModLoadingContext context) {
-		IEventBus bus = context.getModEventBus();
+		context.registerConfig(ModConfig.Type.COMMON, CommonConfig.SPEC, "nebula/storage_tweaks/common.toml");
 	}
 }

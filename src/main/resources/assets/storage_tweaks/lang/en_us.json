@@ -1,0 +1,5 @@
+{
+	"storage_tweaks.tooltip.storageupgrade.desc.item.additive": "Increases the block item storage by %sx",
+	"storage_tweaks.tooltip.storageupgrade.desc.fluid.additive": "Increases the block fluid storage by %sx",
+	"storage_tweaks.tooltip.storageupgrade.desc.range.additive": "Increases controller radius by %s blocks"
+}
