@@ -1,0 +1,5 @@
+{
+	"storage_tweaks.tooltip.storageupgrade.desc.item.additive": "使该容器的物品存储量增加 %s 倍",
+	"storage_tweaks.tooltip.storageupgrade.desc.fluid.additive": "使该容器的流体存储量增加 %s 倍",
+	"storage_tweaks.tooltip.storageupgrade.desc.range.additive": "将控制器的作用半径延长 %s 格"
+}

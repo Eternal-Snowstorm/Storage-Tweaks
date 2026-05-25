@@ -95,7 +95,7 @@ dependencies {
 	// Sophisticated Backpacks
 	implementation fg.deobf("curse.maven:sophisticated-backpacks-422301:8114838")
 	// Sophisticated Storage
-	// implementation fg.deobf("curse.maven:sophisticated-storage-619320:8136838")
+	implementation fg.deobf("curse.maven:sophisticated-storage-619320:8136838")
 	// Sophisticated Core
 	implementation fg.deobf("curse.maven:sophisticated-core-618298:8114826")
 
