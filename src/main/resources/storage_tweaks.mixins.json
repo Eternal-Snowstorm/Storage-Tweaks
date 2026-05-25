@@ -5,13 +5,10 @@
 	"compatibilityLevel": "JAVA_17",
 	"refmap": "storage_tweaks.refmap.json",
 	"mixins": [
-		"StackUpgradeConfigMixin",
 		"BigInventoryHandlerMixin",
 		"CompactingInventoryHandlerMixin",
 		"DrawerStackItemHandlerMixin",
 		"CompactingStackItemHandlerMixin",
-		"InventoryHandlerMixin",
-		"StorageContainerMenuBaseMixin",
 		"ControllableDrawerTileMixin",
 		"StorageUpgradeItemMixin"
 	],
