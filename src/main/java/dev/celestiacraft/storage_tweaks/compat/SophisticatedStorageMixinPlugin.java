@@ -12,7 +12,7 @@ public class SophisticatedStorageMixinPlugin implements IMixinConfigPlugin {
 
 	@Override
 	public void onLoad(String mixinPackage) {
-		loaded = ModsLoaded.isSophisticatedStorageLoaded();
+		loaded = ModsLoaded.isSophisticatedCoreLoaded();
 	}
 
 	@Override

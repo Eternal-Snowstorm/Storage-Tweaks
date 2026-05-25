@@ -29,6 +29,10 @@ public final class StackUpgradeHelper {
 		return isEnabled(StackStorageConfig.NO_STORAGE_STACK_ENABLED) && hasTag(item, StorageTweaksItemTags.NO_STORAGE_STACK);
 	}
 
+	public static boolean isAdditiveStackUpgrade() {
+		return isEnabled(StackStorageConfig.ADDITIVE_STACK_UPGRADE_ENABLED);
+	}
+
 	private static boolean isEnabled(ForgeConfigSpec.BooleanValue value) {
 		return value == null || !CommonConfig.SPEC.isLoaded() || value.get();
 	}
