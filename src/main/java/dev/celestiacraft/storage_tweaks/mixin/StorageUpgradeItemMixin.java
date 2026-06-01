@@ -39,9 +39,18 @@ public abstract class StorageUpgradeItemMixin {
 		} else {
 			int multValue = FunctionalStorageConfig.getLevelMult(tier.getLevel());
 			DecimalFormat formatter = new DecimalFormat();
-			tooltip.add(Component.translatable("storage_tweaks.tooltip.storageupgrade.desc.item.additive", formatter.format(multValue)).withStyle(ChatFormatting.GRAY));
-			tooltip.add(Component.translatable("storage_tweaks.tooltip.storageupgrade.desc.fluid.additive", formatter.format(multValue / FunctionalStorageConfig.FLUID_DIVISOR)).withStyle(ChatFormatting.GRAY));
-			tooltip.add(Component.translatable("storage_tweaks.tooltip.storageupgrade.desc.range.additive", formatter.format(multValue / FunctionalStorageConfig.RANGE_DIVISOR)).withStyle(ChatFormatting.GRAY));
+			tooltip.add(Component.translatable(
+					"storage_tweaks.tooltip.storageupgrade.desc.item.additive",
+					multValue
+			).withStyle(ChatFormatting.GRAY));
+			tooltip.add(Component.translatable(
+					"storage_tweaks.tooltip.storageupgrade.desc.fluid.additive",
+					multValue / FunctionalStorageConfig.FLUID_DIVISOR
+			).withStyle(ChatFormatting.GRAY));
+			tooltip.add(Component.translatable(
+					"storage_tweaks.tooltip.storageupgrade.desc.range.additive",
+					multValue / FunctionalStorageConfig.RANGE_DIVISOR
+			).withStyle(ChatFormatting.GRAY));
 		}
 
 		ci.cancel();
