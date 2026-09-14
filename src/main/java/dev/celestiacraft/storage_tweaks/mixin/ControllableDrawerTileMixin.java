@@ -56,9 +56,8 @@ public abstract class ControllableDrawerTileMixin {
 	public abstract double getStorageDiv();
 
 	@Inject(method = "<init>(Lcom/hrznstudio/titanium/block/BasicTileBlock;Lnet/minecraft/world/level/block/entity/BlockEntityType;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/level/block/state/BlockState;)V", at = @At("RETURN"))
-	private void storageTweaks$wrapUpgradeFilters(BasicTileBlock<?> base, BlockEntityType<?> entityType, BlockPos pos, BlockState state, CallbackInfo ci) {
+	private void storageTweaks$wrapStorageUpgradeFilter(BasicTileBlock<?> base, BlockEntityType<?> entityType, BlockPos pos, BlockState state, CallbackInfo ci) {
 		storageTweaks$wrapInsertPredicate(storageUpgrades);
-		storageTweaks$wrapInsertPredicate(utilityUpgrades);
 	}
 
 	@SuppressWarnings({"unchecked", "rawtypes"})
@@ -77,24 +76,18 @@ public abstract class ControllableDrawerTileMixin {
 	}
 
 	@Inject(method = "onSlotActivated", at = @At("HEAD"), cancellable = true)
-	private void storageTweaks$sameUpgradeOnly(Player playerIn, InteractionHand hand, Direction facing, double hitX, double hitY, double hitZ, int slot, CallbackInfoReturnable<InteractionResult> cir) {
+	private void storageTweaks$sameStorageUpgradeOnly(Player playerIn, InteractionHand hand, Direction facing, double hitX, double hitY, double hitZ, int slot, CallbackInfoReturnable<InteractionResult> cir) {
 		if (!DrawerUpgradeHelper.isSameUpgradeOnly()) {
 			return;
 		}
 
 		ItemStack stack = playerIn.getItemInHand(hand);
-		if (stack.isEmpty() || !(stack.getItem() instanceof UpgradeItem upgradeItem)) {
+		if (stack.isEmpty() || !(stack.getItem() instanceof UpgradeItem upgradeItem)
+				|| upgradeItem.getType() != UpgradeItem.Type.STORAGE) {
 			return;
 		}
 
-		InventoryComponent<?> targetComponent;
-		if (upgradeItem instanceof StorageUpgradeItem || upgradeItem.equals(FunctionalStorage.CREATIVE_UPGRADE.get())) {
-			targetComponent = storageUpgrades;
-		} else {
-			targetComponent = utilityUpgrades;
-		}
-
-		if (targetComponent != null && DrawerUpgradeHelper.hasDifferentUpgrade(targetComponent, stack)) {
+		if (DrawerUpgradeHelper.hasDifferentUpgrade(storageUpgrades, stack)) {
 			cir.setReturnValue(InteractionResult.PASS);
 		}
 	}
