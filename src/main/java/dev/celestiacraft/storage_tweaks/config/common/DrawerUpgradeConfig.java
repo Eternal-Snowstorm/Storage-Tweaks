@@ -14,7 +14,8 @@ public class DrawerUpgradeConfig extends ConfigModule {
 	@Override
 	protected void register() {
 		SAME_UPGRADE_ONLY_ENABLED = builder
-				.comment("Whether a drawer can only accept upgrades of the same item type at once")
+				.comment("Whether a drawer can only accept storage upgrades of the same item type at once")
+				.comment("Does not affect utility upgrades")
 				.comment("type: boolean")
 				.comment("default: true")
 				.define("same_upgrade_only_enabled", true);
